@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.6" client="site" method="upgrade">
+	<name>MOD_USERIDEASITEMS</name>
+	<author>Todor Iliev</author>
+	<copyright>Copyright (C) 2016 Todor Iliev ( ITPrism.com )</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.en.html GNU/GPLv3</license>
+	<authorEmail>todor@itprism.com</authorEmail>
+	<authorUrl>http://itprism.com</authorUrl>
+	<version>1.4</version>
+	<creationDate>17 November, 2016</creationDate>
+	<description><![CDATA[
+    <p>UserIdeas Items is a module that displays items on the website.</p>
+    <p><a href="http://itprism.com/" target="_blank">Subscribe for the newsletter</a> to receive <strong>gifts</strong>, <strong>discount codes</strong>, information about <strong>updates</strong> and information about <strong>new ITPrism extensions</strong>.</p>
+    <p>Please, <a href="http://extensions.joomla.org/extensions/contacts-and-feedback/testimonials-a-suggestions/24422" target="_blank">vote for the extension</a> on Joomla! Extensions Directory</p>
+    ]]></description>
+	
+    <help url="MOD_USERIDEASITEMS_HELP_URL"/>
+
+	<files>
+	    <filename module="mod_userideasitems">mod_userideasitems.php</filename>
+        <folder>language</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+                <field name="show_title" default="1" type="radio" class="btn-group btn-group-yesno" label="JGLOBAL_SHOW_TITLE_LABEL" description="JGLOBAL_SHOW_TITLE_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="show_intro" default="1" type="radio" class="btn-group btn-group-yesno" description="JGLOBAL_SHOW_INTRO_DESC" label="JGLOBAL_SHOW_INTRO_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="show_category" default="1" type="radio" class="btn-group btn-group-yesno" label="JGLOBAL_SHOW_CATEGORY_LABEL" description="JGLOBAL_SHOW_CATEGORY_DESC">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+
+                <field name="show_author" default="1" type="radio" class="btn-group btn-group-yesno" label="JGLOBAL_SHOW_AUTHOR_LABEL" description="JGLOBAL_SHOW_AUTHOR_DESC">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+
+                <field name="show_create_date" default="1" type="radio" class="btn-group btn-group-yesno" label="JGLOBAL_SHOW_CREATE_DATE_LABEL" description="JGLOBAL_SHOW_CREATE_DATE_DESC">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+
+                <field name="show_hits" default="1" type="radio" class="btn-group btn-group-yesno" label="JGLOBAL_SHOW_HITS_LABEL" description="JGLOBAL_SHOW_HITS_DESC">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+
+                <field name="show_status" default="1" type="radio" class="btn-group btn-group-yesno" label="MOD_USERIDEASITEMS_SHOW_STATUS_LABEL" description="MOD_USERIDEASITEMS_SHOW_STATUS_DESC">
+                    <option	value="0">JHIDE</option>
+                    <option	value="1">JSHOW</option>
+                </field>
+
+                <field name="show_button_comments" default="1" type="radio" class="btn-group btn-group-yesno" label="MOD_USERIDEASITEMS_DISPLAY_BUTTON_COMMENTS" description="MOD_USERIDEASITEMS_DISPLAY_BUTTON_COMMENTS_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="show_tags" default="1" type="radio" class="btn-group btn-group-yesno" label="JGLOBAL_SHOW_TAGS_LABEL" description="JGLOBAL_SHOW_TAGS_DESC">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+
+                <field name="show_post_button" default="1" type="radio" class="btn-group btn-group-yesno" label="MOD_USERIDEASITEMS_ITEMS_SHOW_BUTTON_POST_LABEL" description="MOD_USERIDEASITEMS_ITEMS_SHOW_BUTTON_POST_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="allow_html" default="1" type="radio" class="btn-group btn-group-yesno" label="MOD_USERIDEASITEMS_ITEMS_ALLOW_HTML" description="MOD_USERIDEASITEMS_ITEMS_ALLOW_HTML_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="title_length" type="text" label="MOD_USERIDEASITEMS_TITLE_LENGTH" description="MOD_USERIDEASITEMS_TITLE_LENGTH_DESC" />
+                <field name="intro_length" type="text" label="MOD_USERIDEASITEMS_INTRO_LENGTH" description="MOD_USERIDEASITEMS_INTRO_LENGTH_DESC" />
+                <field name="items_limit" type="text" default="20" size="50" label="MOD_USERIDEASITEMS_ITEMS_LIMIT" description="MOD_USERIDEASITEMS_ITEMS_LIMIT_DESC" />
+                <field name="items_ids" type="text" label="MOD_USERIDEASITEMS_ITEMS_IDS" description="MOD_USERIDEASITEMS_ITEMS_IDS_DESC"/>
+                <field name="results_type" type="list" class="list" label="MOD_USERIDEASITEMS_RESULTS_TYPE" description="MOD_USERIDEASITEMS_RESULTS_TYPE_DESC" default="">
+                    <option value="">JNONE</option>
+                    <option value="latest">MOD_USERIDEASITEMS_LATEST</option>
+                    <option value="popular">MOD_USERIDEASITEMS_POPULAR</option>
+                    <option value="mostvoted">MOD_USERIDEASITEMS_MOST_VOTED</option>
+                </field>
+                <field name="counter_button" type="radio" default="0" label="MOD_USERIDEASITEMS_COUNTER_BUTTON" description="MOD_USERIDEASITEMS_COUNTER_BUTTON_DESC" class="btn-group">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+                <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                    
+                <field
+                    name="cache"
+                    type="list"
+                    default="0"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+
+    <updateservers>
+        <server type="extension" priority="1" name="Module - UserIdeas Items">http://cdn.itprism.com/updates/userideas/mod_userideasitems.xml</server>
+    </updateservers>
+</extension>
